@@ -1,0 +1,74 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    width: 1040px;
+    margin: auto;
+    /* border: 1px dashed red; */
+}
+
+/* ------------header---------- */
+header{
+    border-bottom: 1px solid rgb(197, 191, 191);
+}
+#logo{
+    margin: 10px 0 10px 0;
+}
+#logo:active{
+    opacity:0.3;
+}
+#top{
+    float: right;
+    margin: 30px;
+    font-size: 15px;
+}
+#top li{
+    display: inline;
+}
+a:link{
+    text-decoration: none;
+    color: black;
+}
+div#top li:hover{
+    font-weight: bold;
+}
+
+/* ----------- nav ----------- */
+#menu {
+    float: left;
+    margin: 10px 0 30px 0;
+}
+nav#menu img:hover{
+    border: 2px dashed rgb(209, 218, 193);
+}
+
+/* ----------- section ----------- */
+
+section{
+    clear: both;
+}
+#main{
+    float: left;
+    width: 68%;
+    margin-bottom: 20px;
+}
+#aside{
+    float: right;
+    display: inline;
+}
+
+/* ----------- footer ----------- */
+footer{
+    clear: both;
+    border-top: 1px solid rgb(197, 191, 191);
+}
+
+#addess{
+    /* border: 1px solid rebeccapurple; */
+    margin: 30px 0 0 50px;
+}
+#customer{
+    float: right;
+    margin: 30px 100px 0 0;
+}
