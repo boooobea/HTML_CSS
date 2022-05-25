@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> class 선택자 </title>
+
+    <style>
+        /* 클래스 선택자 - 여러 요소들을 선택하여 동일하게 적용 */
+        .class1{
+            color: blue;
+            background-color: yellow;
+        }
+        .class2{
+            color: red;
+            background-color: green;
+        }
+        /* 태그선택자+클래스선택자 */
+        h3.class1{
+            color: navy;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- (h1[class="class"]+p[class="class"])*2+p[class="class1"] -->
+
+    <h1 class="class1">Lorem ipsum dolor sit.</h1>
+    <p class="class1">Lorem, ipsum dolor.</p>
+
+    <h1 class="class2">Lorem ipsum dolor sit.</h1>
+    <p class="class2">Lorem, ipsum dolor.</p>
+
+    <h3 class="class1">Lorem ipsum dolor sit amet.</h3>
+</body>
+
+</html>
