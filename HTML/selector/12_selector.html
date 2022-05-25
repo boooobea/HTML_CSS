@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> 일반 형제 선택자 </title>
+    <style>
+        /* 조합선택자-일반형제선택자( ~ ) */
+        h1 ~ ul {
+            color: blue;
+        }
+        div ~ h3{
+            color: red;
+        }
+        h3 ~ p {
+            color: purple;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Lorem, ipsum dolor.</h1>
+        <h2>Lorem, ipsum dolor.</h2>
+
+        <ul> 목록
+            <li>Lorem.</li>
+            <li>Lorem.</li>
+        </ul>
+    </div>
+
+    <h3>Sibling Selector_1</h3>
+
+    <h4>Lorem, ipsum dolor.</h4>
+
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <h3>Sibling Selector_2</h3>
+    <h3>Sibling Selector_3</h3>
+</body>
+
+</html>
