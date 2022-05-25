@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> 이벤트 가상 클래스 선택자 </title>
+    <style>
+        /* <a>태그 */
+        a:link{
+            color: blue;
+            text-decoration: none;
+        }
+        a:active{
+            background-color: yellow;
+        }
+        a:visited{
+            color: red;
+        }
+
+        /* 모든태그에 사용 */
+        a:hover{
+            text-decoration: overline;
+            background-color: greenyellow;
+        }
+        h2:hover{
+            text-decoration: overline;
+        }
+
+
+        div.d1{
+            border: 1px dashed red;
+            width: 400px;
+            padding: 5px;
+        }
+        /* 가상클래스 */
+        div.d1:hover{
+            background-color: yellow;
+        }
+
+        div.d2{
+            border: 1px dashed green;
+            width: 400px;
+            padding: 5px;
+        }
+        /* 가상클래스 */
+        div.d2:hover{
+            background-color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>Pseudo Class</h2>
+    <p><a href="http://www.w3.org" target="_blank"> w3c 방문</a> :
+        "마우스 이벤트"에 따른 링크의 변화를 살피기 </p>
+
+    <div class="d1">
+        <h3>가상 클래스 1 영역</h3>
+        <em>마우스 위치에 따른 박스의 스타일 변화 
+    </div>
+
+    <div class="d2">
+        <h3> 가상 클래스 2영역</h3>
+        <em>마우스 위치에 따른 박스의 스타일 변화 
+    </div>
+</body>
+
+</html>
