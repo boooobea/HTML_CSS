@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> ID 선택자 </title>
+
+    <style>
+        /* 글로벌속성인 id속성으로 하나의 요소만 지칭*/
+        #id1{
+            color: blue;
+            background-color: pink;
+        }
+
+        #id2{
+            color: blue;
+            background-color: yellow;
+        }
+
+        h2#id1{
+            color: red;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- (h1[id=id]+p[id=id])*2+h2[id=id] -->
+
+    <h1 id="id1">Lorem, ipsum dolor.</h1>
+    <p id="id1">Lorem, ipsum dolor.</p>
+
+    <h1 id="id2">Lorem, ipsum.</h1>
+    <p id="id2">Lorem, ipsum.</p>
+
+    <h2 id="id1">Lorem ipsum dolor sit.</h2>
+</body>
+
+</html>
