@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>구조적 가상 클래스 선택자</title>
+
+    <style>
+        h4:first-child{         /*첫번째 태그의 텍스트 색상*/
+            color: blue;
+            font-size: 20px;
+        }
+        h4:first-of-type{       /*첫번째 태그의 텍스트 색상*/
+            color: blue;
+            font-size: 20px;
+        }
+        h4:last-child{
+            color: red;
+            font-size: 20px;
+        }
+        h4:last-of-type{
+            color: red;
+            font-size: 20px;
+        }
+
+
+        /* 홀수 태그 */
+        /* h4:nth-child(2n+1){ */
+        h4:nth-of-type(2n+1){
+            background-color: green;
+            color: white;
+        }
+        /* 짝수 태그 */
+        /* h4:nth-child(2n){ */
+        h4:nth-of-type(2n){
+            background-color: purple;
+            color: white;
+        }
+
+        /* h4:nth-last-child(2n){ */
+        /* h4:nth-last-of-type(2n){ */
+        h4:only-of-type{
+            background-color: yellow;
+            color: black;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- <h1>h1</h1> -->
+
+    <h4>웹 프로그래밍</h4>
+    <h4>웹 프로그래밍</h4>
+    <h4>웹 프로그래밍</h4>
+    <h4>웹 프로그래밍</h4>
+    <h4>웹 프로그래밍</h4>
+    <h4>웹 프로그래밍</h4>
+    <h4>웹 프로그래밍</h4>
+    <h4>웹 프로그래밍</h4>
+    <h4>웹 프로그래밍</h4>
+    <h4>웹 프로그래밍</h4>
+    <h4>웹 프로그래밍</h4>
+</body>
+
+</html>
