@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>box shadow</title>
+
+    <style>
+        div{
+            width: 200px;
+            height: 50px;
+            padding: 10px;
+            margin: 30px;
+        }
+
+        #bs1{
+            /* red green blue alpha(투명도) */
+            border: 1px solid rgba(102, 186, 255, 0.4);
+            /* 수평 수직 흐림 번짐 */
+            /* box-shadow: 0px 0px 20px 10px rgba(102, 186, 255, 0.4) */
+            box-shadow: 5px 5px 25px 3px black;
+        }
+        /* 그림자효과 다중으로 가능 */
+        #bs2{
+            border: 1px solid black;
+            box-shadow: 10px 10px yellowgreen, 20px 20px rgb(70, 106, 2), 30px 30px yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="bs1">
+        <h3>Lorem ipsum sit.</h3>
+    </div>
+    
+    <div id="bs2">
+        <h3>Lorem ipsum sit.</h3>
+    </div>
+</body>
+
+</html>
