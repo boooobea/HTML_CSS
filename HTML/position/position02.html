@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>position absolute</title>
+
+    <style>
+        body{
+            font-weight: bold;
+            font-size: 12px;
+            
+            height: 3000px;
+        }
+        div{
+            border: 5px solid purple;
+        }
+        /* 부모태그의 영역내에서 top/left/button/rifgt적용 */
+        .ap1{
+            position: absolute;
+            top: 70px;
+            left: 30px;
+
+            background-color: yellow;
+
+            width: 400px;
+            height: 50px;
+        }
+        .ap2{
+            position: relative;
+            top: 90px;
+            left: 40px;
+
+            background-color: greenyellow;
+
+            width: 400px;
+            height: 50px;
+        }
+        .rp{
+            position: absolute;
+            left: 50px;
+            top: 80px;
+
+            background-color: cyan;
+
+            width: 400px;
+            height: 50px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1> position : absolute</h1>
+
+    <div class="ap1">위치설정 - left:30px, top:70px</div>
+    <div class="ap2">위치설정 - left:40px, top:90px</div>
+
+    <div class="rp">상대위치설정 - left:50px, top:80px</div>
+</body>
+</html>
