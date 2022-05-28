@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>position relative</title>
+    <style>
+        /* absolute의 부모영역으로서 존재하게된다. */
+        body{
+            font-weight: bold;
+            font-size: 12px;
+        }
+        div,p {
+            border: 5px solid purple;
+        }
+        .sp{
+            /* static : 본인의 위치에 배치  */
+            position: static;
+            /* position:static인경우, top/right/left/button적용안됨 */
+            left: 30px;
+
+            background-color: cyan;
+
+            width: 400px;
+            height: 50px;
+        }
+        .rp1{
+            /* static을 기준으로 상대위치부터 요소의 위치를 결정 */
+            position: relative;
+            left: 30px;
+            top: -10px;
+
+            background-color: orange;
+
+            width: 400px;
+            height: 50px;
+        }
+        .rp2{
+                /* 상대위치설정은 위치를 변경시키는 용도로는 거의 사용되지 않고, 자식요소중에 
+                position:absolute 속성을 가진 요소의, 기준점이 되는 부모요소가 되기위함.
+                position:relative 속성을 가지거나 body태그를 기준점으로 삼는다. */
+            position: relative;
+            left: 60px;
+            top: 20px;
+
+            background-color: lightgreen;
+            
+            width: 400px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>position:relative</h1>
+
+    <p class="sp">position:static</p>
+    <div class="rp1">position:relative - left:30px, top:-10px</div>
+    <p class="rp2">position:relative - left:60px, top:20px</p>
+</body>
+</html>
