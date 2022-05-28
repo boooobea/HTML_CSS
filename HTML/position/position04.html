@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>relative-absolute</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 5px solid violet;
+
+            background-color: blanchedalmond;
+        }
+        #box1{
+            position: relative;
+
+            width: 500px;
+            height: 500px;
+            border: 5px solid blue;
+            background-color: white;
+        }
+        #box2{
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+
+            border: 5px ridge purple;
+            background-color: greenyellow;
+
+        }
+        #box3{
+            position: absolute;
+            top: 30px;
+            left: 30px;
+
+            border: 5px dashed gold;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1" class="container or wrapper">
+        PARENT<br><strong>position : relative</strong>
+        <div id="box2">
+            CHILD<br><strong>position : absolute</strong>
+
+            <h3>image title</h3>
+            <img src="https://picsum.photos/id/237/100/100">
+        </div>
+
+        <div id="box3">
+            CHILD2 <br><strong>absolute 2</strong>
+            <h3>image 2</h3>
+            <img src="https://picsum.photos/id/1025/100/100">
+        </div>
+    </div>
+</body>
+
+</html>
