@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>animation 3</title>
+
+    <style>
+        @keyframes bounce{
+            from, to{
+                bottom: 0px;
+                /* animation-timing-function: ease-out; */
+                animation-timing-function: cubic-bezier(.07,.88,.6,.94);
+            }
+            50%{
+                bottom: 200px;
+                animation-timing-function: ease-in;
+            }
+        }
+
+        div{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            line-height: 50px;
+            box-shadow: 2px 2px 5px  silver;
+
+            animation-name: bounce;
+            animation-iteration-count: infinite;
+        }
+        #b1{
+            left: 10px;
+            background-color: pink;
+            animation-duration: 2s;
+        }
+        #b2{
+            left: 100px;
+            background-color: lightcoral;
+            animation-duration: 1.5s;
+        }
+        #b3{
+            left: 200px;
+            background-color: coral;
+            animation-duration: 1s;
+        }
+        #b4{
+            left: 300px;
+            background-color: cadetblue;
+            animation-duration: 1.8s;
+        }
+        #b5{
+            left: 400px;
+            background-color: grey;
+            animation-duration: 0.7s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="b1">b1</div>
+    <div id="b2">b2</div>
+    <div id="b3">b3</div>
+    <div id="b4">b4</div>
+    <div id="b5">b5</div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ainimation 2</title>
+    <style>
+        /* 애니메이션 정의 */
+        @keyframes boxmove{
+            from{
+                left: 0px;
+            }
+            to{
+                left: 300px;
+            }
+        }
+
+        div{
+            /* 애니메이션 키 프레임에서 left 위치속성을 사용하기 때문에 이 div 태그의 */
+            /* 위치속성은 position:relative로 설정  */
+            position: relative;
+            width: 200px;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px ridge gold;
+            
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            background-color: lightcoral;
+
+            /* 정의된 애니메이션 적용 */
+            animation: boxmove 5s linear infinite alternate;
+        }
+        #box1{
+            animation-delay: 3s;
+            animation-timing-function: cubic-bezier(.28, 1.88,0.27, 1.07);
+        }
+        #box2{
+            animation-delay: 5s;
+            animation-timing-function: cubic-bezier(0.28,1,88,0.3,-0.66);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">애니메이션 박스1</div>
+    <div id="box2">애니메이션 박스2</div>
+</body>
+
+</html>

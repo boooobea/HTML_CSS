@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>animation 1</title>
+
+    <style>
+        /* 애니메이션 생성 */
+        @keyframes boxmove{
+            from{
+                left: 0px;
+            }
+            to{
+                left: 300px;
+            }
+        }
+
+        div{
+            position: relative;
+
+            width: 100px;
+            height: 100px;
+            background-color: lightpink;
+            /* 이름 시간 속도 반복 방향 */
+            animation: boxmove 5s linear infinite alternate;
+        }
+    </style>
+</head>
+
+<body>
+    <div>애니메이션 박스</div>
+
+    <p><strong>참고: </strong>애니메이션 실습1번</p>
+</body>
+
+</html>
