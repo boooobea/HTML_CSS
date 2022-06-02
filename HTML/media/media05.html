@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Menu </title>
+
+    <style>
+        /* 미디어 쿼리 설정이 나오기 전까지의 CSS블록은 공통으로 적용  */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 960px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #menu{
+            width: 260px;
+            float: left;
+        }
+
+        #section{
+            width: 700px;
+            float: right;
+        }
+
+        @media screen and (max-width:767px){
+            /* 해제옵션 */
+            body{
+                width: auto;
+            }
+            #menu{
+                width: auto;
+                float: none;
+            }
+            #section{
+                width: auto;
+                float: none;
+            }
+        }
+
+
+</style>
+</head>
+
+<body>
+
+    <!-- div[id=menu]>ul>(li*3)+div>h1+p -->
+
+    <div id="menu">
+        <ul>
+            <li>메뉴A</li>
+            <li>메뉴B</li>
+            <li>메뉴C</li>
+        </ul>
+    </div>
+
+    <div id="section">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quaerat quis voluptate in hic nihil, minima,
+            maxime recusandae quibusdam inventore totam quam? Asperiores exercitationem repellat voluptates obcaecati
+            soluta similique et aperiam neque quis fuga, nostrum molestias. Nesciunt quae cupiditate maiores dolores
+            ipsa vero iusto! At id libero perferendis. Mollitia consectetur veniam animi recusandae quae placeat tenetur
+            illum aperiam doloremque maxime quam laboriosam et unde minus quasi, modi, officia fuga dolorum eaque
+            laborum nihil. Aperiam veritatis cumque velit necessitatibus eligendi impedit id magni eaque reprehenderit
+            enim, consectetur illum magnam? Suscipit ut deserunt officia expedita. Odit maiores dolorem molestiae natus
+            perspiciatis illum omnis fuga amet minus eveniet aperiam, quae ut aut in, reprehenderit est corrupti.
+            Soluta, quasi. Labore dolorem quis error perspiciatis assumenda ipsum doloribus nemo sit, incidunt dolores
+            non excepturi deleniti tenetur expedita laudantium possimus eveniet. Impedit dolore laboriosam nobis
+            blanditiis suscipit obcaecati esse, doloribus veritatis neque dolorum? Velit, eveniet eum.</p>
+    </div>
+</body>
+
+</html>

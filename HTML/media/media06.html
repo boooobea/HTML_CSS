@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0
+                        user-scalable=no, maximum-scale=1">
+
+    <title>패턴 2</title>
+
+    <style>
+        /* Desktop First 형태로 미디어 쿼리 설정 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            width: 960px;
+            margin: auto;
+            overflow: hidden;
+        }
+        
+        #menu{
+            width: 260px;
+            float: right;
+        }
+        
+        #section{
+            width: 700px;
+            float: left;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        @media screen and (max-width:767px){
+            /* 스마트폰 사이즈에서 전부 해제 */
+            body{
+                width: auto;
+            }
+            #menu{
+                width: auto;
+                float: none;
+            }
+            #section{
+                width: auto;
+                float: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu">
+        <ul>
+            <li>메뉴A</li>
+            <li>메뉴B</li>
+            <li>메뉴C</li>
+        </ul>
+    </div>
+    <div id="section">
+        <h1>Lorem, ipsum dolor.</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita eum quos, asperiores ipsam saepe quisquam quo et doloribus consectetur nostrum esse perferendis voluptatibus dolorem aperiam dolore placeat tempore facilis explicabo natus libero a ea perspiciatis ad vero? Aut explicabo dolorum esse aliquam voluptatum architecto a beatae voluptate, amet at, eos, sunt cupiditate hic placeat. Adipisci, incidunt ducimus. Cum quae, veritatis nemo omnis harum molestias quibusdam quia quos voluptate itaque unde? Vitae doloribus nemo facilis eaque quibusdam aperiam possimus error iure, expedita consequuntur fugit repellat nobis laborum ratione delectus non veritatis! Corporis iusto alias dignissimos explicabo minus, odit perferendis doloribus veritatis.</p>
+    </div>
+</body>
+
+</html>
