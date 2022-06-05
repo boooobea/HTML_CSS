@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>비교연산자</title>
+</head>
+
+<body>
+    <script>
+        var x = 5;
+        var y = "5";
+        var result;         //undefined
+
+        result = (x > y);     //비교연산
+        console.log("x>y : ", result);
+
+        result = (x == y);    //두 값이 같은지 비교
+        console.log("x==y : ", result);
+
+        result = (x === y);   //두 값과 타입이 같은지 
+        console.log("x===y :", result);
+
+        result = (x != y);    //두 값이 다른지
+        console.log("x!=y : ", result);
+
+        result = (x !== y);   //두 값과 타입이 다른지
+        console.log("x!==y :", result);
+    </script>
+</body>
+
+</html>
