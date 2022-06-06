@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>for</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3, 4, 5];
+        console.log(typeof arr, arr);
+        console.log(arr);
+
+        //enhanced for : 적용안됨
+        // for(var num : arr){
+        //     console.log();
+        // }//enhanced for 
+
+        //enhanced for 변경 된 문법-- for of 문 
+        for(var number of arr){
+            console.log(number);
+        }
+
+        console.log(">>>",number);      //전역변수로 사용 가능 
+        console.log("length",arr.length);
+
+        //for-in : index
+        for(var index in arr){
+            console.log(index);
+        }
+
+    </script>
+</body>
+
+</html>
