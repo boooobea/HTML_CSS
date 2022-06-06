@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>for</title>
+</head>
+
+<body>
+    <script>
+        var x, y; 
+
+        for( x=2; x<=5; x++){
+            console.log("---[",x,"]단---");
+
+            for(y=1; y<=9; y++){
+                console.log(x,"*",y,"=",(x*y));
+            }//inner-for
+        }//outer-for
+    </script>
+
+    <script>
+        var i;
+        var j;
+
+        for( i=1; i<=5; i++){
+            console.log("[", i, "]단");
+
+            for( j=1; j<=9; j++){
+                console.log(i,"*",j,"=",i*j);
+            }
+        }
+    </script>
+</body>
+
+</html>
