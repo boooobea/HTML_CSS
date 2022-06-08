@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>label </title>
+</head>
+
+<body>
+
+    <script>
+        var i, j;
+
+            //label name
+        outloop: for( i=0; i<3; i++){
+
+                 //label name
+            inloop:for(j=0; j<3; j++){
+
+                if(i===1 && j===0){
+                    // break outloop;      //break:벋어남, continue:증감식으로 이동
+                    continue outloop;
+                }//if
+
+            console.log("i=", i, "j=",j);
+            }//inner-for
+        }//outer-for
+
+        console.log("done");
+    </script>
+
+</body>
+
+</html>
