@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>console객체의 메소드</title>
+</head>
+
+<body>
+
+    <script>
+
+        console.log("1. type of console =", typeof console);
+
+        // --
+
+        console.clear();
+
+        // --
+
+        console.info("2. information");
+        console.debug("3. debug");
+        console.trace("4. trace 가장 낮은 레벨");
+        console.warn("5. warning 주의");
+        console.error("6. error 오류");
+
+        // --
+
+        console.group("group 1");
+            console.log("log1");
+            console.log("log2");
+            console.log("log3");
+            console.info("2. information");
+            console.debug("3. debug");
+            console.trace("4. trace 가장 낮은 레벨");
+            console.warn("5. warning 주의");
+            console.error("6. error 오류");
+        console.groupEnd();
+
+        // --
+
+        console.time("계산시간은 얼마나 걸릴까?");
+            let sum = 0;
+            for (let i=1; i<=1e8; i++) {
+            sum += i;
+            }
+        console.log(`결과: ${sum} \n\n`);
+
+        // Timer 종료
+        console.timeEnd("계산시간은 얼마나 걸릴까?"); 
+
+        console.time(" -sample- ");
+            for(var i=0; i<10000; i++);
+        console.timeEnd(" -sample- ");
+
+        // ---
+
+        var obj = {name:"coding", age:23};
+
+        console.dir(obj);   //객체의 내부를 확인
+        console.dir(document);
+
+        console.table(obj); //테이블형태로 표기
+        console.table(document);
+
+    </script>
+
+</body>
+
+</html>
