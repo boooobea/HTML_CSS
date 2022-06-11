@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>익명함수</title>
+</head>
+
+<body>
+
+    <script>
+        //ES5 : var 변수 선언 및 초기화(정의)
+        //ES6 : 1. const (상수) - const 상수명 = "초기값";
+        //      2. let (블록변수 : 선언된 블록내부에서만 가능, 지역변수로 활용) 
+
+        // var text1 = "함수 선언 전 호출 에러";
+        // var text2 = "함수 선언 후 호출만 에러";
+        // ---
+        const text1 = "함수 선언 전 호출 에러";
+        const text2 = "함수 선언 후 호출만 에러";
+
+        // printMsg(text1);            //함수 객체 선언 전 호출 불가 
+
+        var printMsg = function nn(msg){
+
+            console.debug(`printmsg(${msg}) inboked.`);
+            
+            let blockvar = 100;
+            console.log("\t+blockvar:", blockvar);
+            console.log(`\t+blockvar: (${blockvar})`);
+
+        }; 
+        //함수의 1급객체의 성질: 함수는 변수에 대입 가능(****)
+
+        //ES6 : Arrow function 익명함수 생성 및 변수에 대입
+        //실행문장이 한줄이면 중괄호도 생략가능 : 람다식과 특징 동일
+
+        // var printMsg = msg => console.debug(`printmsg(${msg}) inboked.`);
+        
+        console.log(">>>printmsg:", printMsg);
+
+        printMsg(text2);            //함수 객체 선언 후 호출 가능 
+
+        console.log(`>>blockvar after invokeing function:( ${blockvar})`);
+
+        // nn(text2); //익명함수에 함수명을 만들 수 있지만 변수에 대입되었기 때문에 함수명으로 사용불가
+    
+    </script>
+
+</body>
+
+</html>
