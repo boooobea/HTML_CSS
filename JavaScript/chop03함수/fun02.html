@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>function 속성 값 호출</title>
+</head>
+
+<body>
+    
+    <script>
+
+        function printMsg(name, age){
+
+            console.debug(`printmsg(${name}, ${age})invoked`);
+
+            document.write("학생 나이 : <b>"+ name +"</b><Br>");
+            document.write("학생 나이 : <b>" +age +"</b><br>");
+            }
+
+    </script>
+
+
+    <button type="button" onclick="printMsg('홍길동', 21);"> 학생정보</button>
+
+    <p onclick="alert('lorem클릭')">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+
+    
+</body>
+
+</html>
