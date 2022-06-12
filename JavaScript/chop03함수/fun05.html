@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arrow function </title>
+</head>
+
+<body>
+
+    <SCRIpt>
+        //Arrow function 
+        //function 정의 후 변수에 대입(결과값 반영이기 때문에 const사용)
+        const calSum = (x, y) => {
+            return x+y;
+        };
+
+        const addUp = calSum;
+
+        console.debug(`result calSum: ${calSum(5,10)}`);
+        console.debug(`result addUp: ${addUp(3,20)}`);
+        console.debug(`addup ${addUp(100,20)}`);
+
+    </SCRIpt>
+
+</body>
+
+</html>
