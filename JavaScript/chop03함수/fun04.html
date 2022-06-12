@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>return function</title>
+</head>
+
+<body>
+
+    <script>
+        var result;         //전역변수, Undefined.
+                            //const 변수 선언시 초기값 선언도 같이 해주어야 한다.
+                            //함수의 return 값을 저장해야하므로 상수 선언 하기 부적절
+        
+        function add(name, n){
+            
+            console.debug(`add( ${name}, ${n}) invoked.`);
+            let sum = 0;             //let 블록변수로 변경(함수)
+
+            for(let i=0; i<=n; i++){ //let for블록변수로 선언 
+                sum += i;
+            }//for
+
+            return sum;
+        }//add
+
+        result = add("홍길동", 10);
+        document.write(`result:(${result})<p/>`);
+        console.debug(`result: (${result})`);
+       
+        
+        result = add("김코딩", 100);
+        document.write(`result:(${result})<p/>`);
+        console.debug(`result: (${result})`);
+        
+        //함수()적용하여 출력
+        console.debug(`result: ${add("홍길동",10)     }`);
+    </script>
+
+</body>
+
+</html>
