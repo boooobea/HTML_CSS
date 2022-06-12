@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>function 호출인자 2</title>
+</head>
+
+<body>
+
+    <script>
+        function add(x,y,z){
+            console.debug(`add(${x},${y},${z}) invoked.`);
+            
+            let sum;    //let block변수사용
+
+            //매개변수의 값과 타입이 undefined 상태인지 확인해서 덧셈 수행하여 반환
+            //타입까지 정확히 확인해야 하기 때문에 === 사용 
+            if( (y===undefined) && (z===undefined)){
+                sum = x;
+            } else if (z===undefined){
+                sum = x+y;
+            } else {
+                sum = x+y+z;
+            }//if-else if-else 
+
+            return sum;
+        }//add
+
+        var r1 = add(2);
+        console.debug(`호출 인자 부족: ${r1}`);
+
+    </script>
+
+</body>
+
+</html>
