@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Array 4</title>
+</head>
+
+<body>
+
+    <script>
+
+        const com = [95, 88, , 72, 68, , 99, 82, 78, 85];       //공백포함 10
+
+        function printAvg(){    //배열의 평균을 구해서 반환 
+            console.clear(); console.group(printAvg);
+                console.debug(`printAvg() invoked.`);
+
+                let i, sum = 0;
+                let n = com.length;
+
+                document.write(`${n} 명의 점수 입력</p>`);
+                console.log(`${n} 명의 점수 입력`);
+
+                let scores = 0;
+
+                for(i=0; i<n; i++){
+                    if(com[i] !== undefined){
+                        ++scores;
+                        sum += com[i];
+                    } else {
+                        continue;
+                    }
+
+                }//for
+
+                return (sum/scores);     //평균을 구하여 반환 
+
+            console.groupEnd(printAvg);
+        }//printAvg
+
+        const getAvg = printAvg();
+
+        document.write(`평균: ${getAvg}</p>`);
+        console.debug(`평균: ${getAvg}`);
+
+    </script>
+
+</body>
+
+</html>
