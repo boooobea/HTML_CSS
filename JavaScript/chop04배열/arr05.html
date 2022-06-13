@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Array 5</title>
+</head>
+
+<body>
+
+    <script>
+        var x = 5;
+        var arr = [100, "Seoul", true, x];
+
+        x = 10;
+
+        function printArr() {
+
+            console.clear(); console.group(printArr);
+            console.debug(`printArr() inbvoked.`);
+            console.log(`\t+ arr.length: ${arr.length}`);
+
+            let i = 0;
+
+            for (i = 0; i < arr.length; i++) {
+                document.write(`배열데이터 ${i} = ${arr[i]}, 타입: ${typeof arr[i]}`);
+                console.debug(`배열데이터 ${i} = ${arr[i]}, 타입: ${typeof arr[i]}`);
+            }//for
+
+            console.groupEnd(printArr);
+        }//printArr
+
+
+        printArr();
+    </script>
+
+</body>
+
+</html>
