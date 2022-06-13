@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Array 3</title>
+</head>
+
+<body>
+
+    <script>
+        var city = ["Seoul", , "Busan", , "Incheon"]; // 공백 리터럴을 포함 
+
+
+        function printArr(){
+            console.clear(); console.group(printArr);
+
+                console.debug(`prinyArr() invoked.`);
+                console.log(`\t+ arr.length: ${city.length}`);
+
+                let i=0;
+
+                for(i=0; i< city.length; i++){
+
+                    document.write(`배열 데이터[${i}] =${city[i]} <br>`);
+                    console.log(`배열 데이터${i} = ${city[i]}, 타입: ${typeof city[i]}`);
+                }//for
+                
+            console.groupEnd(printArr);
+        }//printArr
+
+        printArr();
+        
+    </script>
+
+</body>
+
+</html>
