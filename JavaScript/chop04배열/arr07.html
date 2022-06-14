@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>new Array() </title>
+</head>
+
+<body>
+
+    <script>
+        //배열객체를 생성하는 두번째 방법 : new 연산자 + 배열 생성자 함수 
+        // var city = new Array("Seoul", "Busan", "Incheon");
+        var city = new Array();
+
+        city[0] = 100;
+        city[1] = 3.14;
+
+        function printArr(){
+            console.clear(); console.group(printArr);
+            console.debug(`printArr() invoked.`);
+            
+            for(let i=0; i< city.length; i++){
+                document.write(`배열데이터 ${i} = ${city[i]}</p>`);
+                console.debug(`배열데이터 ${i}, ${city[i]}, 타입: ${typeof city[i]}`);
+            }//for
+
+            console.groupEnd(printArr);
+        }//printArr
+
+        printArr(); 
+    </script>
+
+</body>
+
+</html>
