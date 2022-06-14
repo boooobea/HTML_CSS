@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Array 09</title>
+</head>
+
+<body>
+
+    <script>
+        var arrdate=[];
+
+        function insetArr(){
+            console.debug(`insertArr() invoked.`);
+            for(let i=0; i<=99; i++){
+                arrdate[i] = i+1;
+            }
+
+            selectArr();        //다른 함수 호출 
+        }//insetArr
+
+        function selectArr(){
+            console.debug(`selectArr() invoked.`);
+            for(let i=0; i<arrdate.length; i++){
+                document.write(`${arrdate[i]} `);
+            }
+
+            addArr();
+        }//selectArr
+        
+        function addArr(){
+            console.debug(`addArr() invoked.`);
+            let sum = 0;
+            for(let i=0; i< arrdate.length; i++){
+                sum += arrdate[i];
+            }
+            document.write(`<p>배열 데이터 덧셈 연산 결과 : ${sum}`);
+            document.write("<p><a href='21_arr.html'>돌아가기</a>");
+        }//addArr
+
+    </script>
+
+    <!-- 이벤트 속성인 onclick의 값으로, 이벤트 핸들러 코드로 자바스크립트 실행문장 저장  -->
+    <button type="button" onclick="insetArr()">배열 생성 / 조회 / 연산</button>
+
+</body>
+
+</html>
