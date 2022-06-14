@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Array 10</title>
+</head>
+
+<body>
+
+    <script>
+        var arrdata = [];
+
+        function insertarr(){
+            console.debug(`insertarr() invoked.`);
+            for(let i=0; i<=99; i++){
+                arrdata[i] = i+1;
+                document.write(`${arrdata[i]} `);
+            }
+            console.debug(`${arrdata}`);
+
+        }//insertarr
+
+        function delarr(){
+            console.debug(`delarr() invoked.`);
+            for(let i=0; i<arrdata.length; i++){
+
+                if( i % 2==0){          //홀수 번째 데이터 삭제 
+                    arrdata[i] = 0;
+                } else continue;
+            }
+            selectarr();
+        }//delarr
+
+        function selectarr(){   //배열의 원소를 traverse하면서 뷰포트에 출력 
+            console.debug(`selectarr() invoked.`);
+
+            // for(let i=0; i<arrdata.length; i++){
+            //     document.write(`${arrdata[i]} `);
+            // }// 1st.for traverse
+
+            arrdata.forEach( v => document.write(v, " "));
+
+            console.debug(`${arrdata}`);
+            console.debug(`홀수 번째 데이터 초기화 완료`);
+
+            document.write(`<p>홀수 번째 데이터 초기화 완료<p>`);
+            document.write(`<a href='arr10.html'> 돌아가기 </a>`);
+        }//selectarr
+
+        insertarr(); //배열 데이터 생성 함수 호출 
+    </script>
+    
+    <button type="button" onclick="delarr()">배열의 홀수 번째 데이터 초기화</button>
+</body>
+
+</html>
