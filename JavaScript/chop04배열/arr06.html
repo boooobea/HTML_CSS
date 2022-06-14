@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Array 6</title>
+</head>
+
+<body>
+
+    <script>
+        const arr = [10, 20, 30, 40, "50"];
+
+        function printArr(){
+            let i=0; sum =0;
+
+            for( ; i<arr.length; i++){
+                //마지막 원소 '50'(String type)과 더하게 되면, 
+                //이전 숫자들의 합과 '50'은 문자열 연결이 된다. 
+                sum += arr[i];
+            }//for
+            
+            return sum;
+        }//printArr
+
+        var result = printArr();
+
+        document.write(`배열 원소 합 : ${result}, 타입${typeof result }</p>`);
+        console.debug(`배열 원소 합 : ${result} , 타입${typeof result}`);
+    </script>
+
+</body>
+
+</html>
