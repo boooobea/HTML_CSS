@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Array 11 </title>
+</head>
+
+<body>
+
+    <script>
+        var arrdata=[];
+
+        function insertArr(){       //배열의 원소를 동적으로 100개 추가 
+            console.debug(`insertArr() invoked.`);
+            for(let i=0; i<=99; i++){
+                arrdata[i] = i+1;
+                document.write(`${arrdata[i]} `);
+                console.debug(`${arrdata[i]}`);
+            }
+
+            document.write(`배열의 크기: ${arrdata.length} <p>`);
+            console.debug(`배열의 크기: ${arrdata.length}`);
+        }//insertArr
+
+        function dellDataArr(){     //배열의 원소를 0으로 초기화 
+            console.debug(`dellDataArr() invoked.`);
+            for(let i=0; i<arrdata.length; i++){
+                arrdata[i] = 0;
+            }
+
+            selectArr();
+        }//dellDataArr
+
+        function allDelArr(){       //배열의 모든 원소를 0으로 초기화 
+            console.debug(`allDelArr() invoked.`);
+            
+            arrdata.length = 0;     //(***)
+
+            selectArr();            //다른 함수호출
+
+        }//allDelArr
+
+        function selectArr(){
+            console.debug(`selectArr() invoked.`);
+
+            // for(let i=0; i<arrdata.length; i++){
+            //     document.write(`${arrdata[i]} `);
+            // }//1st. for
+
+            arrdata.forEach(v =>  document.write( v , " ") ); //2st. foreach
+
+            console.debug(`배열의 크기 : ${arrdata.length}`);
+            document.write(`<p>배열의 크기: ${arrdata.length}<p>`);
+            document.write(`<a href='arr11.html'> 돌아가기 </a>`);
+
+        }//selectArr
+
+        insertArr();               
+
+    </script>
+    <p></p>
+
+    <button type="button" onclick="dellDataArr();">배열 데이터 초기화</button>
+    <button type="button" onclick="allDelArr();">배열 데이터 삭제</button>
+
+</body>
+
+</html>
