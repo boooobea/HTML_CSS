@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> join </title>
+</head>
+
+<body>
+
+    <script>
+        var city=["서울", "부산", "대전", 100, true, ()=>{}];
+        
+        var joindata1 = city.join(' ');             //기본구분자(쉼표 ,)
+        var joindata2 = city.join('-');             //지정된 구분자 사용
+        var joindata3 = city.join(' 그리고 ');
+
+        console.log(`조인결과1 : ${joindata1}`);
+        console.log(`조인결과2 : ${joindata2}`);
+        console.log(`조인결과3 : ${joindata3}`);
+        //block -> ctrol + h : replace 
+    </script>
+    
+</body>
+
+</html>
