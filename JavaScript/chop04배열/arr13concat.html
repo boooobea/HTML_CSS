@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> concat</title>
+</head>
+
+<body>
+
+    <script>
+        const city01 = ["서울", "부산", "대전"];
+        const city02 = ["대구", "광주", "인천"];
+        const city03 = ["전주", "부여", "세종"];
+
+        var data1 = city01.concat("수원", "오산");
+        var data2 = city01.concat(city02);
+        var data3 = city01.concat(city03, city02);
+
+        console.log(`결과 : ${data1}`);
+        console.log(`결과 : ${data2}`);
+        console.log(`결과 : ${data3}`);
+
+        console.log(city01);
+
+    </script>
+
+</body>
+
+</html>
