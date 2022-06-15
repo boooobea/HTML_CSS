@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> map </title>
+</head>
+
+<body>
+    //function()와 같다. 
+
+    <script>
+        const data = [1,2,3,4,5,6,7,8,9,10];
+
+        function mapArr(value){
+            return value * value;
+        }//mapArr
+
+        var mapdata = data.map(mapArr);
+        console.log(`${mapdata}`);
+
+        var mapdata2 = data.map( (value)=> value*value);
+        console.log(`${mapdata2}`);
+
+        var mapdata3 = data.map( (value) => value**2 );
+        console.log(`${mapdata3}`);
+
+
+    </script>
+
+</body>
+
+</html>
