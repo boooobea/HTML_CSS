@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> shift & unshift </title>
+</head>
+
+<body>
+
+    <script>
+        const kdata = ["서울", "부산"];
+        
+        //대량데이터에는 적합하지 않아서 사용하지 않는다. 
+        //배열 앞부분에 추가
+        var p1 = kdata.unshift("청주","세종");
+        console.log(`데이터 : ${p1}`);
+        console.log(`배열 데이터 : ${kdata}`);
+
+        // ---
+        
+        //배열 앞부분에 삭제 
+        var p2 = kdata.shift();
+        console.log(`데이터 : ${p2}`);
+        console.log(`배열 데이터 : ${kdata}`);
+
+    </script>
+
+
+</body>
+
+</html>
