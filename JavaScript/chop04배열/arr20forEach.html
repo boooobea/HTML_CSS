@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>for each(내부반복자)</title>
+</head>
+
+<body>
+
+    <script>
+        const kdata = ["서울", "부산", "청주", "대구"];
+
+        // function printarr(item, index){
+        //     console.log(`배열 데이터: [${index}] : ${item}`);
+            
+        // }//printarr
+
+        kdata.forEach( (item, index) => console.log(`(${index} : ${item})`) );
+
+        // kdata.forEach(printarr);
+    </script>
+
+</body>
+
+</html>
