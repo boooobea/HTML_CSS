@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> slice </title>
+</head>
+
+<body>
+
+    <script>
+        const kdata = ["서울", "부산", "구포", "대구", "인천", "대전", "세종"];
+        console.log(`${kdata}`);
+
+        var str1 = kdata.slice(0, 4); //index 0~3
+        console.log(`${str1}`);
+
+        var str2 = kdata.slice(2, -1);//index 2~ -1(포함안됨)
+        console.log(`${str2}`);
+
+        var str3 = kdata.slice(-4, -2);//index -4 ~ -2
+        console.log(`${str3}`);
+        
+   
+   </script>
+
+</body>
+
+</html>
