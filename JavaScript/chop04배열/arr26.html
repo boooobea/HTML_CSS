@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const arr0 = [10,20,30,40,50];
+        const arr1 = [11,21,31,41,51];
+        const arr2 = [12,22,32,42,52];
+        const arr3 = [13,23,33,43,53];
+
+        const allArr = [arr0, arr1, arr2, arr3];
+        const partArr = [arr1, arr3];
+
+        function printAll(){
+            
+            // for(let x=0; x<allArr.length; x++){
+            //     for(let y=0; y<allArr[x].length; y++){
+
+            //         document.write(`${allArr[x][y]} `);
+            //         console.log(`${allArr[x][y]}`);
+            //     }//inner-for
+            // }//outer-for
+
+            // for(let a of allArr){
+            //     document.write(`${a}  `);
+            //     console.log(`${a}`);
+            // }//1차원 배열 순회 
+
+            for(let a of allArr){
+                for(let b of a){
+                    document.write(`${b} `);
+                    console.log(`${b}`);
+                }
+            }
+            document.write("<a href='arr26.html'> 돌아가기 </a>");
+        }//printAll
+
+
+
+        function printPart(){
+
+            // for(let i=0; i<partArr.length; i++){
+            //     for(let j=0; j<partArr[i].length; j++){
+            //         document.write(`${allArr[i][j]} `);
+            //         console.log(`${partArr[i][j]}`);
+            //     }
+            // }//outer-for
+
+            // for(let a of partArr){
+            //     document.write(`${a}  `);
+            //     console.log(`${a}`);
+            // }//1차원 배열 순회
+
+            for(let a of partArr){
+                for(let b of a){
+                    document.write(`${b} `);
+                    console.log(`${b}`);
+                }
+            }
+
+            document.write("<a href='arr26.html'> 돌아가기 </a> ");
+        }
+    </script>
+
+    <button type="button" onclick="printAll();">전체 배열 데이터 보기</button>
+    <button type="button" onclick="printPart();">홀수 배열 데이터 보기</button>
+</body>
+
+</html>
