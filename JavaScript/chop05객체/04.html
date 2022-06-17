@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="upspeed"></p>
+    <p id="downspeed"></p>
+    <script>
+
+        const car={
+            name:"Sonata",
+            speed:50,
+            color:"white",
+
+            // speedup : function(){
+            //     return this.speed + 10;
+            //     // return speed + 10;
+            // },//speedup
+
+            speedup : () => {
+                // console.log(`this`,this);
+                car.speed += 10;
+                return car.speed;
+            },//speedup
+
+            // speeddown : function(){
+            //     this.speed -= 10;
+            //     return this.speed;
+            // }//speeddown
+
+            speeddown : ()=>{    //arrow function:NaN이 뜨기때문에, this사용불가, 
+                                 //참조변수.속성으로 접근가능 
+                this.speed -= 10;
+                return car.speed;
+            }
+        };  //user-defined object : car
+
+
+        //window>document .getElmentById();
+        var upspeed = document.getElementById("upspeed");
+        upspeed.textContent =`속도 증가 : ${car.speedup()}`;
+
+        var downspeed = document.getElementById("downspeed");
+        downspeed.textContent = `속도 감소 : ${car.speeddown()}`;
+
+=
+
+    </script>
+
+</body>
+
+</html>
