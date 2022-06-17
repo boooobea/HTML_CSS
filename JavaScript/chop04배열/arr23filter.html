@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> filter </title>
+</head>
+
+<body>
+    //predicate 
+    <script>
+        const data = [21, 42, 33, 14, 25, 12, 37, 28, 16, 11];
+
+        function filterArr(value){
+            console.debug(`filterArr(${value}) invoked.`);
+            return value >= 18; //원소 중 조건식이 참이 되는 원소만 새로운 배열에 넣음
+
+        }//filterArr
+
+        var f = data.filter(filterarr);
+        console.log(`${f}`);
+
+        var f2 = data.filter( (value)=> value >= 18 );
+        console.log(`${f2}`);
+
+        var f3 = data.filter( v => v>=18 );
+        console.log(`${f3}`);
+    </script>
+
+</body>
+
+</html>
