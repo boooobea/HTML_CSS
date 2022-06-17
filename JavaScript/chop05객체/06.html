@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title> 다차원 배열 </title>
+</head>
+
+<body>
+
+    <p id="car"></p>
+
+    <p>[Car1 속성]</p>
+    <p id="car0"></p>
+
+    <p>[Car2 속성]</p>
+    <p id="car1"></p>
+
+    <p>[Car3 속성]</p>
+    <p id="car2"></p>
+
+    <script>
+        //Array 생성자 함수를 이용하여, 배열객체를 생성 
+        //생성자 함수의 매개변수에 대한 인자값으로 3개의 1차원 배열을 넣는다. 
+        const car = new Array(
+            ["Sonata", "blue", 100],
+            ["jeep",    "red",  70],
+            ["passt", "white", 150]
+        ); 
+
+        //DOM에서 id=car 인 문서객체(=태그) 선택 
+        //위의 코드로 DOM에서 찾은 문서객체(=태그)의 컨텐츠 변경 
+
+        let cname = document.getElementById("car"); 
+        cname.textContent = `car[2][1] : ${car[2][1]}`; //2차원배열의 특정 원소 참조 
+        
+        //id속성의 값이 car0~ car2까지의 요소(문서객체)선택 
+       
+        for(let i=0; i<3; i++){
+            cname = document.getElementById(`car${i}`);
+            cname.textContent = car[i];
+        }//fors
+
+
+    </script>
+
+</body>
+
+</html>
