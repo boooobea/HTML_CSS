@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="msg1"></p>
+    <p id="msg2"></p>
+    <p id="msg3"></p>
+
+    <script>
+
+        const obj = {     //이 객체는 속성이 없고, 메소드 3개만 선언됨(Anonymous Function)
+            m1 : function(){
+                return "Hello Sonata";
+            },
+            m2 : function(a){
+                let result = a;
+                return result;
+            },
+            m3 : function(a,b){
+                let result = a+b;
+                return result;
+            }
+        }; //객체 리터럴 방식으로 1회성 객체 생성(재사용불가)
+
+        document.getElementById("msg1").innerHTML = obj.m1();
+        document.getElementById("msg2").innerHTML = obj.m2(100);
+        document.getElementById("msg3").innerHTML = obj.m3(100,200);
+    </script>
+
+
+</body>
+
+</html>
