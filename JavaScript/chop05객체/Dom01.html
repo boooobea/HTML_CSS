@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> DOM 01 </title>
+    <script>
+        //(1) DOM tree에 추가할 새로운 요소노드(=태그)를 생성하고
+        //(2) 새로운 요소노드에 추가할 컨텐츠(=텍스트노드)를 생성
+        //(3) (1)+(2) -> 새로운 완전한 요소노드를 만들고 
+        //(4) <body>태그(=body 요소노드)에 추가->새로운 노드가 랜더링
+
+        function add(){
+            let h3 = document.createElement("h3");         // 1. 요소 노드
+            let h3_content = document.createTextNode("내 이름은 홍길동 입니다.");   // 2. 텍스트 노드
+
+            h3.appendChild(h3_content);     // 3. 요소 노드와 텍스트 노드 연결
+            document.body.appendChild(h3);  // 4. 생성한 문서 객체를 body에 추가
+        }//add
+
+    </script>
+</head>
+
+<body>
+
+    <!-- 특정 태그 또는 여러 태그들에 이벤트 핸들러를 설정하려면 3가지 개념을 알아야 함
+    (1).Event Target      - 어떤 이벤트가 발생하는 태그(들)
+    (2).Event Type        - 발생할 이벤트의 유형(onclick:마우스 클릭이벤트)
+    (3).Event Listener    - 이벤트가 발생하길 기다리는 자 (onclick 속성)
+    (4).Event Handler     - 이벤트가 발생했을 때, 이벤트를 처리하는 자  -->
+
+    <a href="#" onclick="add()"> 당신의 이름은 무엇입니까? </a>
+    <!-- target   type,Listener   handler    -->
+
+</body>
+
+</html>
