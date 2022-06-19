@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="d1"></p>
+    <p id="d2"></p>
+    <p id="d3"></p>
+    <p id="d4"></p>
+    <p id="d5"></p>
+    <p id="d6"></p>
+    <p id="d7"></p>
+    <p id="d8"></p>
+    <p id="d9"></p>
+
+          <!-- JSON ------ 표준교환문서  -->
+          <!-- parse : 역직렬화(객체화)  -->
+          <!-- stringify : 직렬화() -->
+
+    <script>
+        var today = new Date();
+
+        document.querySelector("#d1").innerHTML = today.toDateString();
+        document.querySelector("#d2").innerHTML = today.toISOString();
+        document.querySelector("#d3").innerHTML = today.toJSON();             //***
+        //--JSON 직렬화, 역직렬화. 데이터타입의 객체를 직렬화 한것. 
+        
+        document.querySelector("#d4").innerHTML = today.toLocaleDateString(); //***
+        document.querySelector("#d5").innerHTML = today.toLocaleTimeString(); //***
+        document.querySelector("#d6").innerHTML = today.toLocaleString();     //***
+        document.querySelector("#d7").innerHTML = today.toString();
+        document.querySelector("#d8").innerHTML = today.toTimeString();
+        document.querySelector("#d9").innerHTML = today.toUTCString();
+    </script>
+
+</body>
+</html>
