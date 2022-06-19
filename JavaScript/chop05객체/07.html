@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Date() 객체 </title>
+</head>
+
+<body>
+
+    <p id="d1"></p>
+    <p id="d2"></p>
+    <p id="d3"></p>
+    <p id="d4"></p>
+
+    <script>
+        //기본생성자
+        // document.getElementById("d1").innerHTML = new Data();
+        document.querySelector("#d1").innerHTML = new Date(); // 1개의 태그만 선택 ***
+        // document.querySelectorAll("#d").innerHTML = new Date(); // 여러개의 태그를 선택 *** 
+        
+        //1970.01.01 이후의 밀리초 계싼
+        // document.getElementById("d2").innerHTML = new Date(1491803527400);
+        document.querySelector("#d2").innerHTML = new Date(1491803527400); //실전에서 표준방식
+
+        //문자열 날짜 
+        // document.getElementById("d3").innerHTML = new Date("October 15, 2018 06:18:07");
+        document.querySelector("#d3").innerHTML = new Date("October 15, 2018 06:18:07"); //실전에서 표준방식
+
+        //날짜 지정 : 월은 0부터 시작한다. 
+        // document.getElementById("d4").innerHTML = new Date(2018, 11, 25, 18, 30, 29);
+        document.querySelector("#d4").innerHTML = new Date(2018, 11, 25, 18, 30, 29); //실전에서 표준방식
+
+    </script>
+
+</body>
+
+</html>
