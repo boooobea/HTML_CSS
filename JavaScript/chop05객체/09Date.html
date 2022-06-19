@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="digClock"></div>
+
+    <script>
+        function digClock(name){
+            console.debug(`digClock(${name}) invoked.`);
+
+            let today = new Date();
+            let day = `${today.getMonth()+1}월 ${today.getDate()}일`;
+            let time = `${today.getHours()}시 ${today.getMinutes()}분 ${today.getSeconds()}초`;
+
+            document.querySelector("#digClock").innerHTML = day + time;
+
+            //매 1초마다 지정된 함수를 호출하는데, setTimeout()내장함수 사용 
+            //이 함수는 매개변수에 (1)호출할 함수명, (2)주기(timeout, millisecond: 1/1000)지정 
+            //단, 1회성 설정 
+            // setTimeout(digClock, 1000 , "coding");
+
+        }//
+        
+        // digClock("coding");
+        
+        //아래의 내장함수는 설정된 '매'주기에 따라, 자동으로 지정된 타임아웃 핸들러(함수)호출 
+        //setInterval(handler: TimerHandler, timeout?: number, ...arguments)
+        
+        setInterval(digClock , 1000, "coding");
+
+    </script>
+</body>
+
+</html>
