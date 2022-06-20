@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(function (){
+            console.clear();
+
+            $('#list_1'). 
+                parent(). 
+                css('border', '2px dashed #f00');
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <!-- h1+ul[id=wrap]>(li>ul>li*2)+li*2 -->
+
+        <h1>인접 관계 선택자 </h1>
+
+            <!-- 블록요소는 모든 블록요소 + 인라인 요소를 포함할 수 있다. 
+            단, 인라인 요소는 같은 인라인 요소만 포함할 수 있다. -->
+
+        <ul id="wrap">
+            <li>리스트1
+
+                <ul>
+                    <li id="list_1"> 리스트 1-1 </li>
+                    <li> 리스트 1-2</li>
+                </ul>
+            </li>
+            <li> 리스트2 </li>
+            <li> 리스트3 </li>
+        </ul>
+</body>
+
+</html>
