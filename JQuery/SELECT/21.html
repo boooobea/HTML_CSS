@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(function (){
+            console.clear();
+
+            //eq(n) : equal의 뜻으로, 지정된 순번의 요소를 선택 -- 인덱스 순서
+
+            $('#menu li').eq(2).css({backgroundColor : '#ff0'});    //2번째 li태그 선택
+            $('#menu li:lt(2)').css({ backgroundColor : '#0ff'});   //lt(less than 2)번째 li선택, 2번보다 작은
+            $('#menu li:gt(2)').css({ backgroundColor : '#f0f'});   //gt(greater than 2)번째 li선택, 2번보다 큰 
+        });
+    </script>
+</head>
+
+<body>
+    <!-- h1+ul[id=menu]>li*5 -->
+    
+    <h1>구조적 가상 선택자</h1>
+
+    <ul id="menu">
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+        <li>내용4</li>
+        <li>내용5</li>
+        
+    </ul>
+</body>
+
+</html>
