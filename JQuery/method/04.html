@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> inArray(), isArray() , merge() </title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(function (){
+            console.clear(); 
+
+            let arr1 = ['서울', '대전', '부산', '전주']; 
+
+            let arr2 = ['한국', '미국', '일본', '중국']; 
+
+            let obj = {
+                name:'정부장', 
+                area:'서울'
+            }; 
+
+            //inArray<string>(value: string, array: string[], fromIndex?: number): number
+            let idxNum = $.inArray('부산', arr1);
+            console.log(idxNum);
+
+            let okArray1 = $.isArray(arr1); 
+            let okArray2 = $.isArray(obj);
+            console.log(okArray1);
+            console.log(okArray2);
+
+            //인자로 준 여러 배열을 하나로 합쳐서, '새로운'배열로 반환 
+            //기존의 오리지널arr2 배열에 합쳐지기 때문에 원래의 배열은 백업을 해둬야 한다. 
+            $.merge(arr2, arr1);
+            console.log(arr2);
+
+            console.log(arr1);
+
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
