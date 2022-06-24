@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function (){
+            console.clear();
+
+            //원소가 객체 리터럴인 배열 생성
+            let arr = [
+                {area: '서울'},
+                {area: '부산'},
+                {area: '전주'}
+            ];
+
+
+            //배열을 조작하는 다양한 제이쿼리 메소드
+
+            //(method) JQuery.each(func: (index: number, elem: Element) => any): JQuery
+            $(arr).each(function (index,element){               //배열의 순회
+                console.log(index+':',element);
+            }); //.each
+
+            console.log('=== The End 1 === ');
+            
+
+            //JQueryStatic.each(
+            //              collection: any,
+            //              callback: (indexInArray: any, valueOfElement: any) => any):
+            
+            //$.each($(selector), function)
+            $.each($('#menu2 li'), function(index,element){
+                console.log(index+':',element)
+            });
+            console.log('=== The End 2 ===' );
+
+
+            //$.each()메소드 내에서, 순회함수 블록내에서 this는, 현재 원소를 가리킨다.
+            //this - Array like:jQuery 객체- each가 순회하고 있는 개별 노드(ex.li) 
+            $.each($('#menu1 li'), function(index){
+                console.log(index + ':', $(this));
+            });
+
+            //함수는 자바스크립트에서 객체이기 때문에, 속성, 메소드 등 가질 수 있다.
+            //함수가 메소드를 호출할 수 있음. 
+            //$('h1') === $ ---jQuery gkatn --> 1급객체. 
+            // $(arr).each().css. 같은 객체의 메소드호출->반환타입이 객체이기 때문에 또 메소드호출, 연이어서 호출할 수 있다. 
+            
+
+        })
+    </script>
+
+</head>
+
+<body>
+
+    <h1>탐색 선택자</h1>
+    
+    <ul id="menu1">
+        <li>내용1-1</li>
+        <li>내용1-2</li>
+        <li>내용1-3</li>
+    </ul>
+
+    <ul id="menu2">
+        <li>내용2-1</li>
+        <li>내용2-2</li>
+        <li>내용2-3</li>
+    </ul>
+
+</body>
+
+</html>
