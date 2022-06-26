@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> 자바스크립트 이벤트처리 </title>
+
+    <script>
+        //자바스크립트 이벤트 처리1
+        const button = document.querySelector('#bin');
+        button.onclick = function(){ };
+        button.onclick = ()=>{ };
+        onblur, onfocus,
+
+        //자바스크립트 이벤트 처리2
+        const button = document.querySelector('#bin');
+        button.addEventListener(이벤트유형, 이벤트핸들러); 
+        
+        button.addEventListener('click', function(){ }); //on제거하여 넣기.
+        button.addEventListener('click', ()=>{ } );
+        button.addEventListener('blur', ()=>{ } );
+
+        e.target e.type e.eventlistener e.handler 
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
