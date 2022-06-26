@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <style>
+        button{
+            margin: 20px;
+        }
+    </style>
+    <script>
+        $(function(){
+            console.clear();
+
+            $('.btn1').click( e =>{
+                console.debug('onclick');
+                console.debug(e);
+                console.debug('\t+currentTarget:', e.currentTarget);
+                console.debug('\t+ e.Target:', e.target);
+                console.debug('\t+ e.delegateTarget:', e.delegateTarget);
+                console.debug('\t+ textContent:', e.currentTarget.textContent);
+                console.debug('\t+ innerHTML:', e.currentTarget.innerHTML);
+
+                $('.btn1').parent().next().css({color:'red'});
+            });//onclick
+
+
+            //연관배열을 이용한 그룹이벤트, 이벤트별 처리를 다르게 지정
+            //border 영역부터 이벤트발생
+            $('.btn2').on({
+                
+                "mouseover fucus" : e =>{
+                    console.debug('onmouseover or onfocus');
+                    console.debug('\t+currentTarget:', e.currentTarget);
+                    console.debug('\t+ e.delegateTarget:', e.delegateTarget);
+                    console.debug('\t+ e.Target:', e.target);
+                    console.debug('\t+ textContent:', e.currentTarget.textContent);
+                    console.debug('\t+ innerHTML:', e.currentTarget.innerHTML);
+
+                    $('.btn2').parent().next().css({color:'#0f0'});
+                },
+                
+                //mouseenter<->mouseout
+                "mouseout blur": e =>{
+                    console.debug('mouseout or onfocus');
+                    console.debug('\t+currentTarget:', e.currentTarget);
+                    console.debug('\t+ e.delegateTarget:', e.delegateTarget);
+                    console.debug('\t+ e.Target:', e.target);
+                    console.debug('\t+ textContent:', e.currentTarget.textContent);
+                    console.debug('\t+ innerHTML:', e.currentTarget.innerHTML);
+
+                    $('.btn2').parent().next().css({color:"#000"});
+                }
+            });//on
+
+        })
+    </script>
+</head>
+
+<body>
+    <P>
+        <button class="btn1">버튼1</button>
+    </p>
+
+    <p>내용1</p>
+
+    <p>
+        <button class="btn2">버튼2</button>
+    </p>
+    
+    <p>내용2</p>
+</body>
+
+</html>
