@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(function(){
+            console.clear();
+
+            //1. original jQuery Entry Point
+            //DOM tree가 완료 되었을 때 
+            $(document).ready(function(){
+                console.debug('onready');
+
+                let h1 = $('.img1').height();
+                console.log('ready:',h1)
+            }); //orginal jq Entry Point
+
+
+            //2. html문서의 모든 요소의 로딩이 완료된 상태일 때  onload 이벤트 발생 
+            //  second jQuery Entry Point
+            //DOM Tree가 완료되고 모든 자원이 완료가 되었을때(자원파일(파일,비디오 등등)의 속성이 필요하고 자원이 필요할때는 load사용)
+            $(window).load(function(){
+                console.debug('onload');
+
+                let h2 = $('.img1').height();
+                console.log('load:',h2);
+            });//onload
+
+        })//.jq
+    </script>
+</head>
+
+<body>
+    <p> 
+        //place-hold.it : 사이즈의 이미지 얻을때 유용 
+        
+        <img src="https://place-hold.it/100x100" class="img1">
+    </p>
+</body>
+
+</html>
