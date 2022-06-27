@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>scrollTop / scrollLeft</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <style>
+        body{
+            height: 10000px;
+            width: 5000px;
+        }
+        #wrap{
+            position: fixed;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+    <script>
+        //window = document : 뷰포트영역의 스크롤바 움직임을 나타낸다. 
+        $(document).on('scroll', function(){
+            console.debug('onscroll invoked.');
+
+            var sc_top = $(this).scrollTop();   //세로스크롤바 위치
+            var sc_left = $(this).scrollLeft(); //가로스크롤바 위치
+
+            $('.top').text(sc_top);
+            $('.left').text(sc_left);
+
+        });//window
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <p>scrollTop : <span class="top">0</span>px</p>
+        <p>scrollLeft : <span class="left">0</span>px</p>
+    </div>
+</body>
+
+</html>
