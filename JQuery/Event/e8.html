@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> mouseover x, y </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(function(){
+            console.clear();
+
+            //e -> e.pagex, y 좌표를 얻는다. 
+            $(document).on('mousemove',function(e){
+                console.debug('on mousemove');
+                console.debug('\t+ e:',e);
+
+                $('.posX').text(e.pageX);
+                $('.posY').text(e.pageY);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>mousemove</h1>
+    
+    <p>X :<span class="posX">0</span> px </p>
+    <p>Y :<span class="posY">0</span> px</p>
+</body>
+
+</html>
