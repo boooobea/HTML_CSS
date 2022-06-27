@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(function(){
+            console.clear();
+
+            $('.btn1').on('click', function (e){
+                console.debug('onclick..1');
+                e.preventDefault();                 //onclick 이벤트의 기본동작을 제거(무효화): 막다.금지시키다 
+                                                    //e.target 무효. 밑의 ()요소의 작동은 상관없이 실행 
+                $('.txt1').css({ backgroundColor: 'yellow' });
+
+                return false;                       //e.preventDefault == return fasle(***)중요 
+            });//onclick
+
+            $('.btn2').on('click', function(){
+                console.debug('onclick..2');
+                $('.txt2').css({backgroundColor : 'red'});
+            });//onclick
+
+            $('.btn3').on('dblclick', function(){
+                console.debug('ondelclick..3');
+                $('.txt3').css({backgroundColor : '#0f0'});
+            });//ondblclick
+
+
+        })//.jq
+    </script>
+</head>
+<body>
+    <p><a href="http://www.easyspub.co.kr/" class="btn1">버튼1</a></p>
+    <p class="txt1">내용1</p>
+    
+    <p><a href="http://www.easyspub.co.kr/"  class="btn2">버튼2</a></p>
+    <p class="txt2">내용2</p>
+
+    <p><button class="btn3">버튼3</button></p>
+    <p class="txt3">내용3</p>
+</body>
+</html>
