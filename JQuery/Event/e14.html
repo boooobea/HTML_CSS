@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(function(){
+            console.clear();
+
+            $('.menuWrap_1 a').on('click', function(e){
+                console.debug('onclick ..1 ');
+                // e.preventDefault();                 //발생된 이벤트의 기본동작(request)을 무력화(***)
+                //get방식으로 request를 만듬 
+
+                $('.menuWrap_1 a').css({ color : 'black'});
+                $(this).css({ backgroundColor : 'blue', color : 'white'});
+                //이벤트가 활성화 된 타겟 
+
+                return false;
+            });//onclick
+
+            $('.menuWrap_2 a').on('click', function(e){
+                console.debug('onclick ..2 ');
+                e.preventDefault();                 //발생된 이벤트의 기본동작(request)을 무력화(***)
+
+                $('.menuWrap_2 a').css({ backgroundColor : 'white'});
+
+                var idx = $('.menuWrap_2 a').index(this);
+                $('.menuWrap_2 a').eq(idx).css({backgroundColor : 'red'});
+                $('.idxNum').text(idx);
+
+                return false;
+            });//onclick
+
+            //--- 
+
+            // e.preventDefault는 기본동작을 막음. 기본태그는 무용지물 
+            $('p.idxNum').on('click', function(e){
+                console.debug('test : onclick...3'); 
+
+                e.preventDefault(); 
+                console.log(e.isDefaultPrevented());
+
+                $(this).css({ color : 'red'});
+            });//p-onclick
+
+            //---
+            //form delivation 폼양식 검사 후 전송해야한다. 
+
+            $('#form_1').on('submit',function(e){
+                console.debug('test : onclick4...');
+                // e.preventDefault();
+
+                console.log(e.isDefaultPrevented());
+
+                if(true){ //form validation -> true
+                    $(this).submit();   //직접 양식 제출
+                }
+            });//form-onclick
+
+        });//.jq
+    </script>
+
+</head>
+
+<body>
+
+    <!-- h2+(ul[class=menuWrap_1]>(li>a*3) -->
+    <h2>$(this)</h2>
+    <ul class="menuWrap_1">
+        <li><a href="http://www.naver.com">메뉴1</a></li>
+        <li><a href="http://www.daum.net">메뉴2</a></li>
+        <li><a href="http://www.w3c.org">메뉴3</a></li>
+    </ul>
+
+    <h2>Index()</h2>
+    <ul class="menuWrap_2">
+        <li><a href="http://www.naver.com">메뉴4</a></li>
+        <li><a href="http://www.daum.net">메뉴5</a></li>
+        <li><a href="http://www.w3c.org">메뉴6</a></li>
+        <li><a href="http://localhost:8080">Netcat</a></li>
+    </ul>
+
+    <p class="idxNum"></p>
+
+    <hr>
+    
+    <form action="http://localhost:8080" method="post" id="form_1">
+        your name: <input type="text" name="yourName" id="yourName">
+        <p></p>
+
+        <input type="submit" value="전송">
+    </form>
+</body>
+
+</html>
