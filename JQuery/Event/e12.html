@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select change</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(function(){
+            console.clear();
+
+            // this : e.target
+            // 일반적인 태그의 컨텐츠를 가져올 때에는, text() or html()사용 , 
+            // 입력양식의 사용자가 입력한 값이나 값을 가져올 때에는 val()를 사용
+            // on - change : select 이벤트를 사용해야한다. 
+            $('#rel_site').on('change' , function(){
+
+                console.debug('this:', $(this));
+                $('.txt').text( $(this).val() );
+            });
+
+        });//.jq
+    </script>
+</head>
+
+<body>
+
+    <select id="rel_site">
+        <option value="">사이트선택</option>
+        <option value="www.google.com">구글</option>
+        <option value="www.naver.com">네이버</option>
+        <option value="www.daum.net">다음</option>
+    </select>
+
+    <p class="txt"></p>
+</body>
+
+</html>
