@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(function(){
+            console.clear();
+
+            //html 이벤트 
+            $('#id_1, #pw_1').on('focus', function(){
+                $(this).css({ backgroundColor : 'pink'});
+            });//focus
+
+            $('#id_1, #pw_1').on('blur', function(){
+                $(this).css({ backgroundColor : 'white'});
+            }); //blur
+
+            
+            //제이쿼리 이벤트로 focus, blur 에 상응하는 이벤트 설정 
+            $('#id_2, #pw_2').on('focusin', function(){
+                $(this).css({ backgroundColor : 'pink'});
+            }); //focusin
+
+            $('#id_2, #pw_2').on('focusout', function(){
+                $(this).css({ backgroundColor : 'white'});
+            });//focusout
+
+            
+            // 객체로서 조회, [0]에는 태그자체가 들어있다. 
+            let id_2 = $('#id_2');
+            console.log(id_2[0]);
+            console.dir(id_2[0]);
+        });//jq
+    </script>
+</head>
+
+<body>
+    <h1> focus / blur</h1>
+    <form action="#">
+        <p>
+            <label for="id_1"> ID </label>
+            <input type="text" name="id_1" id="id_1">
+        </p>
+        <p>
+            <label for="pw_1"> PW </label>
+            <input type="text"name="pw_1" id="pw_1"">
+        </p>
+        <p>
+            <input type="submit" value="submit">
+        </p>
+    </form>
+
+    <h1> focusin / focusout</h1>
+    <form action="#" id="frm_2">
+        <p>
+            <label for="id_2"> ID </label>
+            <input type="text" name="id_2" id="id_2">
+        </p>
+        <p>
+            <label for="pw_2"> PW </label>
+            <input type="text"name="pw_2" id="pw_2"">
+        </p>
+        <p>
+            <input type="submit" value="submit">
+        </p>
+    </form>
+</body>
+
+</html>
