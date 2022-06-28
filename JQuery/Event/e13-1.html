@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(function(){
+            console.clear();
+
+            $(document).on('keydown', keyEventFnc );
+
+            //e.handler function 선언(1급객체)
+            function keyEventFnc(e){
+                let direct='';
+
+                //event 객체의 필드로, 사용자가 입력한 키코드 값을 저장하고 있는 필드
+                switch(e.keyCode){
+                    case 37 : direct = 'LEFT'; break;
+                    case 38 : direct = 'TOP'; break;
+                    case 39 : direct = 'RIGHT';break;
+                    case 40 : direct = 'BOTTOM'; break;
+                }//switch
+
+                if(direct){ //input 태그에 사용자가 입력한 값을 획득/설정 (val메소드)
+                    $('#id_1').val(direct);
+                }//if
+            };//keyEventFnc
+        });//.jq
+    </script>
+</head>
+<body>
+    <p><input type="text" name="id_1" id="id_1"> </p>
+</body>
+</html>
