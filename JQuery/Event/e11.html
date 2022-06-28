@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(function(){
+            console.clear();
+
+            let obj = $('#btn1');
+            obj.new = 'coco';               //필드
+            obj.mehtod1 = function my(){    //메소드
+                console.log('메소드만드는중');
+            };
+            console.log(obj);
+            //요소노드 객체 data()이기 때문에 인자로 키-값을 만들어 덧붙이기 가능. 
+            //키값을 인자로 불러내면 값을 불러올 수 있따. 
+
+            $('#btn1').data('text','javascript');
+            // 선택요소에 데이터를 덧붙인다. 키-값으로 내부적인 필드를 덧붙인 후 키를 불러 값을 호출한다.  
+
+            
+            $('#btn1').
+                data({ text : 'javascript'}). 
+                on({
+                    mouseover : overFnc,
+                    mouseout : outFnc
+            });
+
+            $('#btn2').
+                data({ text : 'welcome'}). 
+                on({
+                    'mouseover focus' : overFnc,
+                    'mouseout blur' : outFnc
+            });
+
+            //2개의 1급객체 함수 선언
+            function overFnc(){
+                $('.txt').text( $(this).data('text') );
+            }//overFnc
+
+            function outFnc(){
+                $('.txt').text("");
+            }//outFnc
+
+        })//.jq
+    </script>
+</head>
+
+<body>
+    <p><button id="btn1">버튼1</button></p>
+    <p><button id="btn2">버튼2</button></p>
+
+    <p class="txt"></p>
+</body>
+
+</html>
