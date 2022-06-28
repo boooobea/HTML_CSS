@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(function(){
+            console.clear();
+            
+            //1. .addClass(_) 추가 전에 요소를 선택하여 이벤트 발생시 실행되지 않는다. 
+            //추가 후 요소를 선택하면 발생됨 
+            //2번처럼 이벤트를 설정 후, 위임할 선택요소를 추가해줘야한다. 
+            $('.btn_1.on').on('mouseover focus', function(){
+                alert('Hello!');
+                console.log('.btn_1.on');
+            });//mouseover&focus
+            
+            // 선택요소에 class=on 속성 등록
+            $('.btn_1').addClass('on'); 
+
+
+            //2.이벤트 위임방식의 이벤트 설정
+            //위임방식의 이벤트 핸들러 설정 후 요소 추가(addClass)
+            //
+            $(document).on('mouseover focus', '.btn_2.on', function(){
+                alert('WELCOME!');
+            });//mouseover&focus til.btn2요소노드에 class=on일때, 이벤트 핸들러 작동
+
+            $('.btn_2').addClass('on');
+        });//.jq
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p><button class="btn_1">버튼1</button></p>
+        <p><button class="btn_2">버튼2</button></p>
+    </div>
+</body>
+</html>
