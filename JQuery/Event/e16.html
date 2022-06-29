@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(function(){
+            console.clear();
+
+            $('.bin_1').addClass('on');
+            //위임방식의 이벤트 핸들러 등록
+            $('.btn_wrap').delegate('.btn_1.on', 'mouseover focus', function(){
+                alert('Hello!');
+            });//delegate
+            
+
+            //위임방식의 그룹이벤트 핸들러 등록, 1회성으로 실행된다.
+            $(document).one('mouseover focus', '.btn_2.on', function(){
+                alert('Welcome!');
+            });//one
+
+            $('.btn_2').addClass('on'); //동적으로 class 속성값 추가
+
+        });//.jq
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <p class="btn_wrap">
+            <p><button class="btn_1">버튼1</button></p>
+        </p>
+        <p><button class="btn_2">버튼2</button></p>
+    </div>
+</body>
+
+</html>
