@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> global lifecycle method </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script defer>
+        console.clear();
+
+        //$(document) global로 지정하여 세팅
+        // ajaxStart -> ajaxSend -> ajaxSuccess / ajaxError -> ajaxComplete -> ajaxStop
+        $(document).ajaxStart(() => console.log('global-1. ajaxStart'));
+        $(document).ajaxSend(() =>  console.log('global-2. ajaxSend'));
+        $(document).ajaxStop(() =>  console.log('global-3. ajaxStop'));
+        $(document).ajaxComplete(() => console.log('global-4. ajaxComplete'));
+        $(document).ajaxError(() => console.log('global-5.ajaxComplete'));
+        $(document).ajaxSuccess(() => console.log('global-6. ajaxSuccess'));
+
+        $.ajax('MOCK_DATA.json', {
+            async: true,
+            cache: true,
+            timeout: 1000,
+            crossDomain: true,
+            global: true,
+            type: 'get',
+            // data: queryString,
+            dataType: "json", 
+
+            dataFilter: (raw, dataType) => {
+                console.debug('(2). dataFilter invoked.');
+                return raw;
+            },
+
+            beforeSend: (jqXHR, settings) => {
+                console.debug('(1). beforeSend invoked.');
+            },
+
+            complete: (jqXHR, textStatus) => {
+                console.debug('(4). complete invoked.');
+            },
+
+            error: (jqXHR, textStatus, errorThrown) => {
+                console.debug('(3). error invoked.');
+            },
+
+            success: (data, textStatus, jqXHR) => {
+                console.debug('(3). success invoked.');
+            },
+        }); // $.ajax
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
