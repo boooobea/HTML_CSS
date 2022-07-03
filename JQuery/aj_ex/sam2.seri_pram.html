@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> serialize , param </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        console.clear();
+
+        $( ()=>{
+
+            //<form>마다 id를 지정하여 id마다 serialize를 얻음
+            $('#submit').click( (e)=>{
+                e.preventDefault();
+
+                //serialize : 폼태그(객체)의 id=value 의 값(전송파라미터)을 받을수 있다. 
+                let serializerdStr = $('#form1').serialize();
+                console.log('1. serializerdStr :', serializerdStr);
+
+                //param : 객체의 전송파라미터를 저장 
+                const obj = {name:'coding', age:23 };
+                let paramStr = $.param(obj);
+                console.log('2. paramStr:', paramStr);
+            });//click
+        });//.jq
+    </script>
+</head>
+<body>
+    <h1> 지금 이건 ajax 실습2 </h1>
+    <hr>
+    <form action="#" id="form1">
+        1. name : <input type="text" name="name"><br>
+        2. age : <input type="number" name="age">
+
+        <p></p>
+
+        <input type="submit" value="submit" id="submit">
+    </form>
+</body>
+</html>
