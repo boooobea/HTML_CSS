@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.getJSON </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script defer>
+        console.clear();
+
+        //JQueryStatic.getJSON(url: string, 
+        //                     success?: (data: any, textStatus: string, jqXHR: JQueryXHR) => any): JQueryXHR
+        $.getJSON('MOCK_DATA.json', (json)=>{
+            console.debug('getJSON invoked.');
+
+            $.each(json, (i,v)=>{
+                
+                let id = v.id;
+                let firstName = v.first_name;
+                let lastName = v.last_name;
+                let gender = v.gender;
+                let email = v.email;
+                let ipAddress = v.ip_address;
+
+                console.log(id, firstName, lastName, email, gender, ipAddress);
+            })//.each
+        })//$.getJSON
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
