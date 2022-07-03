@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> XHR - 비동기식 연결 </title>
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        window.onload = function(){
+            console.clear();
+
+            //1. 객체 생성 
+            var xhr = new XMLHttpRequest();
+
+            //2. XMLHttpRequest.onreadystatechange: (this: XMLHttpRequest, ev: Event)
+            xhr.onreadystatechange = function(){
+                console.log('onreadystatechange:', xhr.readyState);
+
+                if(xhr.readyState == 4){        // 응답완료상태:4 
+
+                    if(xhr.status == 200){      //http code 200 : 정상인 경우에만 
+                        document.body.innerHTML = xhr.responseText; 
+
+                        //직렬화, 역직렬화(***):JSON -> JS Obecjt , 바인딩해야함
+                        //객체 배열 [ {객체}, {객체}...] 이기 때문에 배열로 받음
+                        var arr = JSON.parse(xhr.responseText);
+                        console.log(arr);
+
+                        if(arr.length > 0){
+                            var person = arr[0];
+                            console.group('person');
+                                console.log('1. id:', person.id);
+                                console.log('2. first-name:', person.first_name);
+                                console.log('3. last_name:',person.last_name);
+                                console.log('4. email:',person.email);
+                                console.log('5. gender:', person.gender);
+                                console.log('6. ip address:',person.ip_address);
+                            console.groupEnd('person');
+                        }//if(arr.length)
+                    }//status==200
+                }//readyState==400
+            }//onreadystatechange
+
+            //3. open 
+            //비동기식 연결이기 때문에 onreadystatechange event handler를 지정해야함
+            xhr.open('GET','doc/persons.json', true); 
+            
+            // 필요시 메소드를 통해 Request Message의 헤더영역에, 새로운 헤더 추가or기존 헤더의 값 변경(setter)
+            //XMLHttpRequest.setRequestHeader(name: string, value: string)
+            // xhr.setRequestHeader('Content-Type','a어쩌구저쩌구')
+
+            //4. send
+            // 요청을 보낸 후 새로운 스레드가 처리하므로 계속 진행             
+            xhr.send();
+
+        };//window-onload
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
