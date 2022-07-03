@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.getScript </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script defer>
+        console.clear();
+
+        //JQueryStatic.getScript(url: string, 
+        //                      success?: (script: string, textStatus: string, jqXHR: JQueryXHR) => any)
+        //                      : JQueryXHR
+        // 외부에서 script를 불러와서 바로 실행 : 동적으로 기능을 확장시킬 수 있음 
+        $.getScript('test.js');
+
+        
+        $.getScript('test.js', js => {
+            console.log('success invoked.');
+            console.log('\t+ js:', js)
+        });
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
