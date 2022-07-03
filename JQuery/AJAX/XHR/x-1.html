@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> XHR 1 - 동기식 연결 </title>
+    <!-- favicon/ -->
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    
+    <script>
+        //e.taeget(window) e.type(load) e.listener(onload) e.handler(function)
+        window.onload = function(){
+            console.clear();    
+            
+            //1. 객체생성 
+            var xhr = new XMLHttpRequest();
+            console.log('1. xhr:', xhr);
+            console.log('\t+ 객체생성 readyState:', xhr.readyState);
+
+            //2. 객체 초기화(open)
+            // XMLHttpRequest.open(method: string, url: string | URL, async: boolean, username?: string, password?: string):
+            // 동기식 : 요청이 끝날때까지 기다림, 비동기식 : 요청을 보내고 별도의 스레드로 계속 작업
+            // xhr.open('POST', 'http://localhost:8080/doc/persons.json', false);
+            xhr.open('GET', 'doc/persons.json', false);
+            console.log('2. xhr:', xhr);
+            console.log('\t+ open() readyState:', xhr.readyState);
+
+            //XMLHttpRequest.send(body?: Document | XMLHttpRequestBodyInit)
+            //전송param 보낼때는 (k-v), 없이보낼때는 ();
+            xhr.send('name=coding');
+            console.log('3. xhr:', xhr);
+            console.log('\t+readyState:', xhr.readyState);
+
+            //4. xhr로 보낸 요청과 응답 데이터를 이용해서 body 태그에 컨텐츠로 지정 
+            document.body.innerHTML = xhr.responseText;
+
+        };//onload
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
