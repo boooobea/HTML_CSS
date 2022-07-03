@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    
+    <!-- defer : document.ready 와 같다. -->
+    <!-- $(Document).ready( ()=> {}) == $(function(){}) -->
+    <!-- $.ajax()는 entrypoint 없어도 사용가능!!! -->
+    <script defer>
+        console.clear();
+
+        var obj = { name:'kimcoding', age:23 };
+
+        let queryString = $.param(obj);
+        console.log('1. queryString: ', queryString);
+
+        //JQueryStatic.ajax(url: string, settings?: JQueryAjaxSettings)
+        $.ajax('MOCK_DATA.json',{
+            
+            async : true,           //동기화여부 - true(비동기),false(동기)
+            cache : true,           //데이터를 저장 후 요청시 돌려줌
+            timeout : 1000,         //비동기 요청의 응답시간 지정
+            crossDomain : true,     // ... 
+            global : true,          //local vs global - life cycle로 이루어짐(defaule true)
+            type : 'get',           //전송방식 : get / post (default get)
+            data : queryString,     //보내는 데이터 : (serialize, param == queryString(전송파라미터))
+            dataType : 'json',      //받을 데이터 타입()
+
+            //locla life cycle :
+            // beforeSend -> dataFilter -> success -> complete
+            // beforeSend -> error -> complete
+            dataFilter : (raw, dataType)=>{ //받은 데이터를 필터링함(우선순위)
+                console.log('(1).dataFilter invoked.')
+                return raw;
+            },
+            beforeSend : (jqXHR, settings)=>{
+                console.log('(2).beforeSend invoked.')
+            },
+            complete : (jqXHR,textStatus)=>{
+                console.log('(3).complete invoked.')
+            },
+            error : (jqXHR,textStatus)=>{
+                console.log('(4).error invoked.')
+            },
+            success : (data, textStatus, jqXHR)=>{
+                console.log('(5).success invoked.')
+            }
+
+        })//$.ajax
+    </script>
+</head>
+<body>
+   
+</body>
+</html>
