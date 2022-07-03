@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script defer>
+        console.clear();
+
+        // 1. get(url: string, 
+        //             success?: (data: any, textStatus: string, jqXHR: JQueryXHR) => any, 
+        //             dataType?: string): JQueryXHR
+        // 2. get(url: string, 
+        //             data?: string | Object, 
+        //             success?: (data: any, textStatus: string, jqXHR: JQueryXHR) => any, 
+        //             dataType?: string): JQueryXHR
+        // 3. get(settings: JQueryAjaxSettings): JQueryXHR
+        $.get(
+            'persons.xml',      //url
+            (xml) => {          //success()=>{}
+                console.debug('success invoked.');
+
+                let persons = $(xml).find('person');
+                if (persons.length == 0) return;
+
+                $.each(persons, (i, p) => {
+                    let id = $(p).find('id').text();
+                    let firstName = $(p).find('first_name').text();
+                    let lastName = $(p).find('last_name').text();
+                    let email = $(p).find('email').text();
+                    let gender = $(p).find('gender').text();
+                    let ipAddress = $(p).find('ip_address').text();
+
+                    console.log(id, firstName, lastName, email, gender, ipAddress);
+                })//person.each
+
+            },//success
+            'xml');//dataType
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
