@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(() => {
+            console.clear();
+
+            $.ajax({
+                url: 'http://localhost:8080/members.xml',
+                dataType: 'xml',
+                success: (xml) => {
+                    console.log('xml invoked.');
+
+                    let members = $(xml).find('member');
+                    // console.log(members);
+                    if (members.length > 0) {
+                        // console.log('if')
+                        const table = $('<table>');
+
+                        for (let m of members) {
+                            let id = $(m).find('id').text();
+                            let firstName = $(m).find('first_name').text();
+                            let lastName = $(m).find('last_name').text();
+                            let gender = $(m).find('gender').text();
+                            let email = $(m).find('email').text();
+                            let ipAddress = $(m).find('ip_address').text();
+
+                            let tr = $('<tr>').append(
+                                $('<td>').text(id),
+                                $('<td>').text(firstName),
+                                $('<td>').text(lastName),
+                                $('<td>').text(gender),
+                                $('<td>').text(email),
+                                $('<td>').text(ipAddress),
+                            )//append
+
+                            table.append(tr);
+                        }//for
+                        $('#wrap1').append(table);
+                        $('table').css('borderCollapse', 'collapse');
+                        $('td').css({ 
+                            border : '1px solid black',
+                            paddingLeft : '10px'
+                        })
+                    }//if
+                }//success
+            })//.ajax
+        })//.jq
+    </script>
+</head>
+
+<body>
+    <h1>lorem</h1>
+    <div id="wrap1"></div>
+    <h1>lorem</h1>
+    <div id="wrap2"></div>
+    <h1>lorem</h1>
+    <div id="wrap3"></div>
+</body>
+
+</html>
