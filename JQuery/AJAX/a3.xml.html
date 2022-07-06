@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> XML </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(function(){
+            console.clear();
+
+            $.ajax({
+                url : 'XML/members.xml',
+                dataType : 'xml',
+                success : function(xml){
+                    
+                    console.debug('success invoked.');
+                    console.log('1. xml:',xml);
+
+                    let members = $(xml).find("member");
+                    console.log('2. members :', members)
+                    
+                    if(members.length > 0){             //binding(데이터를 붙임)
+                        
+                        const tbl = $('<table>');
+                        
+                        $.each(members, function( i , e ){
+                            console.log('3. :', i , e);
+                            
+                            //각 member의 모든 속성값 추출
+                            let id = $(e).find('id').text();
+                            let firstName = $(e).find('first_name').text();
+                            let lastName = $(e).find('last_name').text();
+                            let email = $(e).find('email').text();
+                            let gender = $(e).find('gender').text();
+                            
+                            // console.log(id, firstName, lastName, email, gender);
+                        
+                            let tr = $('<tr>').append(
+                                $('<td>').text(id),
+                                $('<td>').text(firstName),
+                                $('<td>').text(lastName),
+                                $('<td>').text(email),
+                                $('<td>').text(gender)
+
+                            );//append
+                        
+                            tbl.append(tr);
+                        })//each
+
+                        $('.wrap').append(tbl);
+                    }//if
+                }//success
+            })//$.ajax
+        });//.jq
+    </script>
+</head>
+<body>
+    <div class="wrap"></div>
+</body>
+</html>
