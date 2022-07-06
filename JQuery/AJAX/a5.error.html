@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> XML - error </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(function(){
+            console.clear();
+
+            //비동기 호출 - 동일 출처 원칙 위배 
+            $.ajax({
+                //URL for Live Web server 
+                // url : 'XML/members.xml',
+
+                //url for apache tomcat web server
+                url : 'http://localhost:8080/members.xml',
+                dataType : 'xml',
+
+                //원하는 데이터를 직접 find해야함(파싱)
+                success : function(xml){
+                    console.debug('success invoked.');
+                    console.log('1. xml : ', xml);
+
+                    let members = $(xml).find('member');
+                    console.log('2. members :', members);
+                    
+                    if(members.length > 0){         //바인딩수행 
+                        
+                        let table = $('<table>');
+
+                        $(members).each(function(i , e){
+                            
+                            // 각 member의 모든 속성값 추출, 태그의 콘텐츠를 얻어냄html(), text()
+                            let id = $(e).find('id').text();    
+                            let firstName = $(e).find('first_name').text();
+                            let lastName = $(e).find('last_name').text();
+                            let email = $(e).find('email').text();
+                            let gender = $(e).find('gender').text();
+
+                            console.debug(`${id},${firstName},${lastName},${email},${gender}`);
+
+                            let tr = $('<tr>').append(
+                                $('<td>').text(id),
+                                $('<td>').text(firstName),
+                                $('<td>').text(lastName),
+                                $('<td>').text(email),
+                                $('<td>').text(gender)
+                            )
+                            table.append(tr);
+
+                        })//$.each
+
+                        $('.wrap').append(table);
+                        $('table').css({
+                            borderCollapse : 'collapse',
+                            margin : '50px 0 0 20px'
+                        });
+                        $('td').css({
+                            border:'1px solid black',
+                            paddingLeft : '10px'
+                        });
+                    }//if
+                },//success
+
+                // .error?(jqXHR: JQueryXHR, textStatus: string, errorThrown: string)
+                error : function(jqXHR,textStatus,errorThrown){
+                    console.debug('error invoked.');
+                    console.log(`textStatus : ${textStatus}, errorThrown : ${errorThrown}`);
+                }//error
+
+            });//$.ajax
+        });//.jq
+    </script>
+</head>
+<body>
+    <div class="wrap"></div>
+</body>
+</html>
