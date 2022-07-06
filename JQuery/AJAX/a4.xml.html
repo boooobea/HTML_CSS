@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> XML document 사용 </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script defer>
+        console.clear();
+        let xmlval;
+
+        $.ajax({
+            url: 'XML/members.xml',
+            dataType: 'xml',
+            success: (xml) => {
+
+                xmlval = xml;
+                console.log('1', xmlval instanceof Node);
+                console.log('2', xmlval instanceof Document)
+                console.log('3', xmlval instanceof XMLDocument);
+
+                let members = xmlval.querySelectorAll('member');
+
+                if (members.length > 0) {
+
+                    let tbl = $('<table>');
+
+                    for (let m of members) {
+                        let id = $(m).children('id').text();
+                        let firstName = $(m).children('first_name').text();
+                        let lastName = $(m).children('last_name').text();
+                        let gender = $(m).children('gender').text();
+                        let email = $(m).children('email').text();
+
+                        let row = $('<tr>').append(
+                            $('<td>').append(id),
+                            $('<td>').append(firstName),
+                            $('<td>').append(lastName),
+                            $('<td>').append(gender),
+                            $('<td>').append(email)
+                         )//append
+
+                        tbl.append(row);
+                    }//for-of
+
+                    $('#wrap').append(tbl);
+                    //css작업 
+                    $('table').css({ borderCollapse : 'collapse' , marginTop : '50px' });
+                    $('td').
+                        css({ border : '1px solid black', paddingLeft : '10px' })
+                }//if
+
+            }//success
+        });//.ajax
+    </script>
+</head>
+
+<body>
+    <div id="wrap"></div>
+</body>
+
+</html>
