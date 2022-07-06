@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=j, initial-scale=1.0">
+    
+    <title>Document</title>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            console.clear();
+
+            //val()메소드는 입력양식의 사용자 입력값을 반환
+            let result_1 = $('#user_name').val();
+            console.log(result_1);
+
+            //val(인자)메소드는, 입력양식에 인자 값을 넣는다
+            $('#user_id').val('javascript');
+
+            //선택자가 선택한 요소(태그)의 속성 중, 이름이 'defalutValue'인 속성의 값 반환 
+            //prop->property(객체의 속성) -> 문서객체의 attribute를 반환한다. 
+            let result_2 = $('#user_id').prop('defaultValue');
+            console.log(result_2);
+
+        });     //.jq
+    </script>
+</head>
+
+<body>
+
+    <h1> 객체 조작 및 생성</h1>
+
+    <form action="#," id="form_1">
+        <p>
+            <label for="user_name"> 이름 </label>
+            <input type="text" name="user_name" id="user_name" value="용대리">
+        </p>
+
+        <p>
+            <label for="user_id"> 아이디</label>
+            <input type="text" name="user_id" id="user_id" value="hello">
+        </p>
+    </form>
+</body>
+
+</html>
