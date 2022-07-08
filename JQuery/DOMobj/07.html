@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(function (){
+           console.clear();
+           //뷰포트 기준으로 h1태그의 상단 위치값 획득
+
+           let topNum = $('h1').offset().top;
+           console.log(`${topNum}`);
+
+            //최상위 객체인 window객체의 메소드인 scrollTop(스크롤위치값)으로 
+            //수직 스크롤바 위치를 조절
+           $(window).scrollTop(topNum);
+
+            //현재 수직 스크롤바의 위치값 획득 
+           let sct = $(window).scrollTop();
+           console.log(sct);
+            
+        }); //.jq
+    </script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            line-height: 1;
+        }
+        #wrap{
+            height: 5000px;
+            padding-top: 2000px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>위치 메서드</h1>
+    </div>
+</body>
+
+</html>
