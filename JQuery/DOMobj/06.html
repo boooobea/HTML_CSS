@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script>
+        //제이쿼리 메소드를 이용해서, 선택한 요소의 위치값을 얻기 
+
+        $(function (){
+            console.clear();
+
+            let $txt1 = $('.txt_1 span');
+            let $txt2 = $('.txt_2 span');
+            let $box = $('.box');
+
+            //offset() : 시작위치 , position(): 
+            let off_t = $box.offset().top;      //100 문서(뷰포트기준으로, 시작위치)를 기준으로 한 상대위치 
+            let pos_t = $box.position().top;    //relative가 부모이기 때문에, 부모기준으로 부터 절대위치를 얻어낸다 
+                                                //.top():위에서부터 절대위치 50 : relative가 없으면 body가 부모
+
+            $txt1.text(off_t);
+            $txt2.text(pos_t);
+        });
+    </script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box_wrap{
+            width: 300px;
+            height: 200px;
+            margin: 50px auto 0;
+            
+            position: relative;
+            background-color: #ccc;
+        }
+        
+        .box{
+            width: 50px;
+            height: 50px;
+
+            position: absolute;
+            top: 50px;
+            left: 100px;
+
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box_wrap">
+        <p class="box"> 박스 </p>
+    </div>
+
+    <p class="txt_1">상대 top위치 값: <span></span></p>
+    <p class="txt_2">절대 top위치 값: <span></span></p>
+
+</body>
+
+</html>
