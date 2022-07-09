@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        $(function(){
+            // console.clear();
+
+            //선택자가 선택한 요소노드의 부모노드를 삭제(부모가wrap->unwrap)
+            $("strong").unwrap();
+
+            $(".ct1").wrap("<div>");    //각각 감싸는 부모를 만든다. 
+            $(".ct2").wrapAll("<div>"); //한꺼번에 감싸는 하나의 부모를 만든다. 
+
+            $("li").wrapInner("<h3>"); //선택한 요소의 내용을 각각 감싼다. 
+
+        });
+    </script>
+
+
+
+</head>
+
+<body>
+    <h1 id="tit_1">
+        <strong>객체 조작 및 생성</strong>
+        <p>TEST</p>
+    </h1>
+
+    <p class="ct1">내용1</p>
+    <p class="ct2">내용2</p>
+    <p class="ct2">내용3</p>
+    <p class="ct3">내용4</p>
+
+    <ul>
+        <li>내용5</li>
+        <li>내용6</li>
+    </ul>
+
+</body>
+
+<script defer>
+    console.clear();
+
+    // HTMLElement 타입의 문서 객체 tit_1
+    const h1 = document.querySelector("#tit_1");
+    console.log(h1);
+</script>
+
+</html>
