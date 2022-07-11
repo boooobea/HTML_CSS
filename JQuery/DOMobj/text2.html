@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            // console.clear();
+
+            let setinter = setInterval(scrolldown,100);
+            
+            function scrolldown(){
+                window.scrollBy(0,20);
+                console.log(`current pos:${window.scrollY}`);       
+
+                $('progress').attr({
+                    value : window.scrollY,
+                    // color : orange,
+                    max : $('body').height()-$(window).innerHeight()
+                });
+                
+                // if(window.scrollY >2290){
+                    if($(window).innerHeight() + $(window).scrollTop() > $('body').height()){
+                        clearInterval(setinter);
+                        console.log(`scroll end`);
+                    }  
+                    
+                }
+
+            });
+
+        // $(window).scroll(function(){
+
+        // let progressbar = $('#progress');
+
+        // let scroll = $(window).scrollTop();
+        // let dh = $('body').height();
+        // let wh = $(window).height();
+
+        // let percent = (scroll / (dh-wh)) *100; 
+
+        // progressbar.css('width', percent+'%');
+        // });
+
+    </script>
+    <style>
+        body{
+            height: 3000px;
+            background-image: linear-gradient(45deg, red, yellow, blue);
+        }
+
+        .progress{
+            position: fixed;
+            top : 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+
+            border-radius: 10px;
+            color: white;
+            /* background-image: linear-gradient(to right, red, yellow, blue); */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <div id="progress">
+        <div class="progress_1"></div>
+    </div> -->
+
+    <div class="progress">
+        <label for="progress"> progress </label>
+        <progress id="progress" value="0" max="3000"></progress>
+    </div>
+
+</body>
+
+</html>
